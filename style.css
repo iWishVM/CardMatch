@@ -22,12 +22,22 @@ margin: 0;
 background: radial-gradient(#cfbaf8, #670b92);
 }
 
+.orientation-msg {
+  content-visibility: hidden;
+  font-family: VMCircularChatPTT-Book, serif;
+font-weight: normal;
+text-align: center;
+font-size:.3em;
+
+
+}
+
 .page-title {
 color: #d0ff00;
 font-family: VMCircularChatPTT-Book, serif;
 font-weight: normal;
 text-align: center;
-font-size: 5em;
+font-size: 3em;
 }
 
 .game-info-container {
@@ -40,13 +50,13 @@ justify-content: space-between;
 color: #f11717;
 /* background-color: #ff8989; */
 border-color: #1e032e;
-font-size: 3em;
+font-size: 2em;
 }
 
 .game-container {
-margin: 50px auto;
+margin: 5px auto;
 display: grid;
-grid-template-columns: repeat(5, auto);
+grid-template-columns: repeat(6, auto);
 grid-gap: 10px;
 justify-content: center;
 perspective: 500px;
@@ -199,17 +209,73 @@ from {
 }
 to {
   background-color: rgba(0, 0, 0, .8);
-  font-size: 10em;
+  font-size: 7em;
 }
 }
 
-@media (max-width: 600px) {
+@media (orientation: portrait) and (max-width: 600px) {
 .game-container {
-  grid-template-columns: repeat(4, auto)
+  grid-template-columns: repeat(2, auto)
 }
 
 .game-info-container {
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
 }
+.game-info{
+  font-size: 1.5em;
 }
+
+.orientation-msg {
+  content-visibility: visible;
+  font-size: 80%;
+}
+.page-title{
+  display:none;
+}
+.card {
+  position: relative;
+  height: 100px;
+  width: 100px;
+  }
+
+/* .overlay-text{
+  font-size: 80%;
+} */
+}
+
+@media (orientation: landscape) and (max-width: 900px) {
+  .game-container {
+    grid-template-columns: repeat(6, auto)
+  }
+  
+  .game-info-container {
+    flex-direction: row;
+    align-items: center;}
+
+    .game-info{
+      font-size: 2em;
+    }
+    
+  .orientation-msg {
+    content-visibility: hidden;
+  }
+  .page-title{
+    display: none;
+  }
+  .card {
+    position: relative;
+    height: 100px;
+    width: 100px;
+    }
+/*   .overlay-text{
+    font-size: 80%;
+  } */
+}
+/* test 
+@media only screen and (orientation: landscape) {
+  body {
+    background-color: lightblue;
+  }
+}
+*/
