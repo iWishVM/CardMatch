@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="style.css" rel="stylesheet">
+  <script src="script.js" async></script>
+  <title>Card Match</title>
+</head>
+<body>
+  <h1 class="page-title">Card Match</h1>
+  
+  <div class="overlay-text visible">
+    Click to Start
+    <div class= "orientation-msg" >Best played in landscape mode !</div> 
+  </div>
+ 
+  <div id="game-over-text" class="overlay-text">
+    GAME OVER
+    <span class="overlay-text-small">Click to Restart</span>
+  </div>
+  <div id="victory-text" class="overlay-text">
+    VICTORY
+    <span class="overlay-text-small">You matched all cards in </span>
+     <span id = "timeused" class="overlay-text-small">seconds, using </span><span id = "flipsused" class="overlay-text-small"> flips.</span>
+    <!-- <span class="overlay-text-small"> flipsused </span>  -->
+    <!-- <span class="overlay-text-small"> </span> -->
+    
+    <span class="overlay-text-small">Click to Restart</span>
+  </div>
+
+  <div class="game-container">
+    <div class="game-info-container">
+   
+      <div class="game-info">
+        Time <span id="time-remaining">500</span>
+      </div>
+      <div class="game-info">
+        Flips <span id="flips">0</span>
+      </div>
+    </div>
+<!--     <div class="card">
+      <div class="card-back card-face">
+        <img class="pin pin-top-left" src="Assets/Images/logo.png">
+        <img class="pin pin-top-right" src="Assets/Images/logo.png">
+        <img class="pin pin-bottom-left" src="Assets/Images/logo.png">
+        <img class="pin pin-bottom-right" src="Assets/Images/logo.png">
+        <img class="vmlogo" src="Assets/Images/VirginMediaLogo.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="pin pin-top-left" src="Assets/Images/logolight.png">
+        <img class="pin pin-top-right" src="Assets/Images/logolight.png">
+        <img class="pin pin-bottom-left" src="Assets/Images/logolight.png">
+        <img class="pin pin-bottom-right" src="Assets/Images/logolight.png">
+        <img class="card-value" src="Assets/Images/Van.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="pin pin-top-left" src="Assets/Images/logo.png">
+        <img class="pin pin-top-right" src="Assets/Images/logo.png">
+        <img class="pin pin-bottom-left" src="Assets/Images/logo.png">
+        <img class="pin pin-bottom-right" src="Assets/Images/logo.png">
+        <img class="vmlogo" src="Assets/Images/VirginMediaLogo.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="pin pin-top-left" src="Assets/Images/logolight.png">
+        <img class="pin pin-top-right" src="Assets/Images/logolight.png">
+        <img class="pin pin-bottom-left" src="Assets/Images/logolight.png">
+        <img class="pin pin-bottom-right" src="Assets/Images/logolight.png">
+        <img class="card-value" src="Assets/Images/Van.png">
+      </div>
+    </div> -->
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="pin pin-top-left" src="Assets/Images/logo.png">
+        <img class="pin pin-top-right" src="Assets/Images/logo.png">
+        <img class="pin pin-bottom-left" src="Assets/Images/logo.png">
+        <img class="pin pin-bottom-right" src="Assets/Images/logo.png">
+        <img class="vmlogo" src="Assets/Images/VirginMediaLogo.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="pin pin-top-left" src="Assets/Images/logolight.png">
+        <img class="pin pin-top-right" src="Assets/Images/logolight.png">
+        <img class="pin pin-bottom-left" src="Assets/Images/logolight.png">
+        <img class="pin pin-bottom-right" src="Assets/Images/logolight.png">
+        <img class="card-value" src="Assets/Images/Box.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="pin pin-top-left" src="Assets/Images/logo.png">
+        <img class="pin pin-top-right" src="Assets/Images/logo.png">
+        <img class="pin pin-bottom-left" src="Assets/Images/logo.png">
+        <img class="pin pin-bottom-right" src="Assets/Images/logo.png">
+        <img class="vmlogo" src="Assets/Images/VirginMediaLogo.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="pin pin-top-left" src="Assets/Images/logolight.png">
+        <img class="pin pin-top-right" src="Assets/Images/logolight.png">
+        <img class="pin pin-bottom-left" src="Assets/Images/logolight.png">
+        <img class="pin pin-bottom-right" src="Assets/Images/logolight.png">
+        <img class="card-value" src="Assets/Images/Box.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="pin pin-top-left" src="Assets/Images/logo.png">
+        <img class="pin pin-top-right" src="Assets/Images/logo.png">
+        <img class="pin pin-bottom-left" src="Assets/Images/logo.png">
+        <img class="pin pin-bottom-right" src="Assets/Images/logo.png">
+        <img class="vmlogo" src="Assets/Images/VirginMediaLogo.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="pin pin-top-left" src="Assets/Images/logolight.png">
+        <img class="pin pin-top-right" src="Assets/Images/logolight.png">
+        <img class="pin pin-bottom-left" src="Assets/Images/logolight.png">
+        <img class="pin pin-bottom-right" src="Assets/Images/logolight.png">
+        <img class="card-value" src="Assets/Images/phone.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="pin pin-top-left" src="Assets/Images/logo.png">
+        <img class="pin pin-top-right" src="Assets/Images/logo.png">
+        <img class="pin pin-bottom-left" src="Assets/Images/logo.png">
+        <img class="pin pin-bottom-right" src="Assets/Images/logo.png">
+        <img class="vmlogo" src="Assets/Images/VirginMediaLogo.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="pin pin-top-left" src="Assets/Images/logolight.png">
+        <img class="pin pin-top-right" src="Assets/Images/logolight.png">
+        <img class="pin pin-bottom-left" src="Assets/Images/logolight.png">
+        <img class="pin pin-bottom-right" src="Assets/Images/logolight.png">
+        <img class="card-value" src="Assets/Images/phone.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="pin pin-top-left" src="Assets/Images/logo.png">
+        <img class="pin pin-top-right" src="Assets/Images/logo.png">
+        <img class="pin pin-bottom-left" src="Assets/Images/logo.png">
+        <img class="pin pin-bottom-right" src="Assets/Images/logo.png">
+        <img class="vmlogo" src="Assets/Images/VirginMediaLogo.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="pin pin-top-left" src="Assets/Images/logolight.png">
+        <img class="pin pin-top-right" src="Assets/Images/logolight.png">
+        <img class="pin pin-bottom-left" src="Assets/Images/logolight.png">
+        <img class="pin pin-bottom-right" src="Assets/Images/logolight.png">
+        <img class="card-value" src="Assets/Images/wifi.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="pin pin-top-left" src="Assets/Images/logo.png">
+        <img class="pin pin-top-right" src="Assets/Images/logo.png">
+        <img class="pin pin-bottom-left" src="Assets/Images/logo.png">
+        <img class="pin pin-bottom-right" src="Assets/Images/logo.png">
+        <img class="vmlogo" src="Assets/Images/VirginMediaLogo.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="pin pin-top-left" src="Assets/Images/logolight.png">
+        <img class="pin pin-top-right" src="Assets/Images/logolight.png">
+        <img class="pin pin-bottom-left" src="Assets/Images/logolight.png">
+        <img class="pin pin-bottom-right" src="Assets/Images/logolight.png">
+        <img class="card-value" src="Assets/Images/wifi.png">
+      </div>
+    </div>
+<!--     <div class="card">
+      <div class="card-back card-face">
+        <img class="pin pin-top-left" src="Assets/Images/logo.png">
+        <img class="pin pin-top-right" src="Assets/Images/logo.png">
+        <img class="pin pin-bottom-left" src="Assets/Images/logo.png">
+        <img class="pin pin-bottom-right" src="Assets/Images/logo.png">
+        <img class="vmlogo" src="Assets/Images/VirginMediaLogo.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="pin pin-top-left" src="Assets/Images/logolight.png">
+        <img class="pin pin-top-right" src="Assets/Images/logolight.png">
+        <img class="pin pin-bottom-left" src="Assets/Images/logolight.png">
+        <img class="pin pin-bottom-right" src="Assets/Images/logolight.png">
+        <img class="card-value" src="Assets/Images/web.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="pin pin-top-left" src="Assets/Images/logo.png">
+        <img class="pin pin-top-right" src="Assets/Images/logo.png">
+        <img class="pin pin-bottom-left" src="Assets/Images/logo.png">
+        <img class="pin pin-bottom-right" src="Assets/Images/logo.png">
+        <img class="vmlogo" src="Assets/Images/VirginMediaLogo.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="pin pin-top-left" src="Assets/Images/logolight.png">
+        <img class="pin pin-top-right" src="Assets/Images/logolight.png">
+        <img class="pin pin-bottom-left" src="Assets/Images/logolight.png">
+        <img class="pin pin-bottom-right" src="Assets/Images/logolight.png">
+        <img class="card-value" src="Assets/Images/web.png">
+      </div>
+    </div> -->
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="pin pin-top-left" src="Assets/Images/logo.png">
+        <img class="pin pin-top-right" src="Assets/Images/logo.png">
+        <img class="pin pin-bottom-left" src="Assets/Images/logo.png">
+        <img class="pin pin-bottom-right" src="Assets/Images/logo.png">
+        <img class="vmlogo" src="Assets/Images/VirginMediaLogo.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="pin pin-top-left" src="Assets/Images/logolight.png">
+        <img class="pin pin-top-right" src="Assets/Images/logolight.png">
+        <img class="pin pin-bottom-left" src="Assets/Images/logolight.png">
+        <img class="pin pin-bottom-right" src="Assets/Images/logolight.png">
+        <img class="card-value" src="Assets/Images/gamepad.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="pin pin-top-left" src="Assets/Images/logo.png">
+        <img class="pin pin-top-right" src="Assets/Images/logo.png">
+        <img class="pin pin-bottom-left" src="Assets/Images/logo.png">
+        <img class="pin pin-bottom-right" src="Assets/Images/logo.png">
+        <img class="vmlogo" src="Assets/Images/VirginMediaLogo.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="pin pin-top-left" src="Assets/Images/logolight.png">
+        <img class="pin pin-top-right" src="Assets/Images/logolight.png">
+        <img class="pin pin-bottom-left" src="Assets/Images/logolight.png">
+        <img class="pin pin-bottom-right" src="Assets/Images/logolight.png">
+        <img class="card-value" src="Assets/Images/gamepad.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="pin pin-top-left" src="Assets/Images/logo.png">
+        <img class="pin pin-top-right" src="Assets/Images/logo.png">
+        <img class="pin pin-bottom-left" src="Assets/Images/logo.png">
+        <img class="pin pin-bottom-right" src="Assets/Images/logo.png">
+        <img class="vmlogo" src="Assets/Images/VirginMediaLogo.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="pin pin-top-left" src="Assets/Images/logolight.png">
+        <img class="pin pin-top-right" src="Assets/Images/logolight.png">
+        <img class="pin pin-bottom-left" src="Assets/Images/logolight.png">
+        <img class="pin pin-bottom-right" src="Assets/Images/logolight.png">
+        <img class="card-value" src="Assets/Images/home.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="pin pin-top-left" src="Assets/Images/logo.png">
+        <img class="pin pin-top-right" src="Assets/Images/logo.png">
+        <img class="pin pin-bottom-left" src="Assets/Images/logo.png">
+        <img class="pin pin-bottom-right" src="Assets/Images/logo.png">
+        <img class="vmlogo" src="Assets/Images/VirginMediaLogo.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="pin pin-top-left" src="Assets/Images/logolight.png">
+        <img class="pin pin-top-right" src="Assets/Images/logolight.png">
+        <img class="pin pin-bottom-left" src="Assets/Images/logolight.png">
+        <img class="pin pin-bottom-right" src="Assets/Images/logolight.png">
+        <img class="card-value" src="Assets/Images/home.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="pin pin-top-left" src="Assets/Images/logo.png">
+        <img class="pin pin-top-right" src="Assets/Images/logo.png">
+        <img class="pin pin-bottom-left" src="Assets/Images/logo.png">
+        <img class="pin pin-bottom-right" src="Assets/Images/logo.png">
+        <img class="vmlogo" src="Assets/Images/VirginMediaLogo.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="pin pin-top-left" src="Assets/Images/logolight.png">
+        <img class="pin pin-top-right" src="Assets/Images/logolight.png">
+        <img class="pin pin-bottom-left" src="Assets/Images/logolight.png">
+        <img class="pin pin-bottom-right" src="Assets/Images/logolight.png">
+        <img class="card-value" src="Assets/Images/bulb.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="pin pin-top-left" src="Assets/Images/logo.png">
+        <img class="pin pin-top-right" src="Assets/Images/logo.png">
+        <img class="pin pin-bottom-left" src="Assets/Images/logo.png">
+        <img class="pin pin-bottom-right" src="Assets/Images/logo.png">
+        <img class="vmlogo" src="Assets/Images/VirginMediaLogo.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="pin pin-top-left" src="Assets/Images/logolight.png">
+        <img class="pin pin-top-right" src="Assets/Images/logolight.png">
+        <img class="pin pin-bottom-left" src="Assets/Images/logolight.png">
+        <img class="pin pin-bottom-right" src="Assets/Images/logolight.png">
+        <img class="card-value" src="Assets/Images/bulb.png">
+      </div>
+    </div>
+    <!-- //new card -->
+<!--     <div class="card">
+      <div class="card-back card-face">
+        <img class="pin pin-top-left" src="Assets/Images/logo.png">
+        <img class="pin pin-top-right" src="Assets/Images/logo.png">
+        <img class="pin pin-bottom-left" src="Assets/Images/logo.png">
+        <img class="pin pin-bottom-right" src="Assets/Images/logo.png">
+        <img class="vmlogo" src="Assets/Images/VirginMediaLogo.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="pin pin-top-left" src="Assets/Images/logolight.png">
+        <img class="pin pin-top-right" src="Assets/Images/logolight.png">
+        <img class="pin pin-bottom-left" src="Assets/Images/logolight.png">
+        <img class="pin pin-bottom-right" src="Assets/Images/logolight.png">
+        <img class="card-value" src="Assets/Images/pod.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="pin pin-top-left" src="Assets/Images/logo.png">
+        <img class="pin pin-top-right" src="Assets/Images/logo.png">
+        <img class="pin pin-bottom-left" src="Assets/Images/logo.png">
+        <img class="pin pin-bottom-right" src="Assets/Images/logo.png">
+        <img class="vmlogo" src="Assets/Images/VirginMediaLogo.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="pin pin-top-left" src="Assets/Images/logolight.png">
+        <img class="pin pin-top-right" src="Assets/Images/logolight.png">
+        <img class="pin pin-bottom-left" src="Assets/Images/logolight.png">
+        <img class="pin pin-bottom-right" src="Assets/Images/logolight.png">
+        <img class="card-value" src="Assets/Images/pod.png">
+      </div>
+    </div> -->
+<!--     <div class="card">
+      <div class="card-back card-face">
+        <img class="pin pin-top-left" src="Assets/Images/logo.png">
+        <img class="pin pin-top-right" src="Assets/Images/logo.png">
+        <img class="pin pin-bottom-left" src="Assets/Images/logo.png">
+        <img class="pin pin-bottom-right" src="Assets/Images/logo.png">
+        <img class="vmlogo" src="Assets/Images/VirginMediaLogo.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="pin pin-top-left" src="Assets/Images/logolight.png">
+        <img class="pin pin-top-right" src="Assets/Images/logolight.png">
+        <img class="pin pin-bottom-left" src="Assets/Images/logolight.png">
+        <img class="pin pin-bottom-right" src="Assets/Images/logolight.png">
+        <img class="card-value" src="Assets/Images/lock.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="pin pin-top-left" src="Assets/Images/logo.png">
+        <img class="pin pin-top-right" src="Assets/Images/logo.png">
+        <img class="pin pin-bottom-left" src="Assets/Images/logo.png">
+        <img class="pin pin-bottom-right" src="Assets/Images/logo.png">
+        <img class="vmlogo" src="Assets/Images/VirginMediaLogo.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="pin pin-top-left" src="Assets/Images/logolight.png">
+        <img class="pin pin-top-right" src="Assets/Images/logolight.png">
+        <img class="pin pin-bottom-left" src="Assets/Images/logolight.png">
+        <img class="pin pin-bottom-right" src="Assets/Images/logolight.png">
+        <img class="card-value" src="Assets/Images/lock.png">
+      </div>
+    </div> -->
+  </div>
+
+</body>
+</html>
